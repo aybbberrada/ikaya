@@ -5,7 +5,12 @@ where you're looking on the screen in real time, as a circle, a doodle trail or 
 
 Everything runs in the browser. Video never leaves the phone.
 
-## Run it
+## Open it online
+
+Hosted on GitHub Pages: **https://aybbberrada.github.io/ikaya/**. Open it in Safari on the iPhone,
+tap **Start camera** and allow access. Every push that changes `public/` redeploys it.
+
+## Run it locally
 
 Requirements: Node 18+ and `openssl` (preinstalled on macOS and most Linux).
 
