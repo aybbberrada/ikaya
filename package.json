@@ -1,0 +1,12 @@
+{
+  "name": "ikaya",
+  "version": "0.1.0",
+  "description": "Local web app that tracks where you look on your iPhone screen using the front camera.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

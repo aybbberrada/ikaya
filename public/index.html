@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <title>Ikaya Gaze</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="video" playsinline muted autoplay></video>
+  <canvas id="canvas"></canvas>
+
+  <!-- Debug camera preview with eye landmarks -->
+  <canvas id="preview" class="hidden"></canvas>
+
+  <!-- Calibration target -->
+  <div id="target" class="hidden"><div class="ring"></div><div class="core"></div></div>
+
+  <!-- Status line -->
+  <div id="status" class="hidden"></div>
+
+  <!-- Start screen -->
+  <section id="intro" class="panel">
+    <h1>Ikaya Gaze</h1>
+    <p>Uses the front camera to follow your eyes and shows where you look on the screen.</p>
+    <ol>
+      <li>Hold the phone steady at a comfortable reading distance (25–40&nbsp;cm), in portrait.</li>
+      <li>Good, even light on your face helps a lot.</li>
+      <li>During calibration, follow each dot with your <b>eyes</b>. Keep your head still.</li>
+    </ol>
+    <button id="startBtn" class="primary">Start camera</button>
+    <button id="resumeBtn" class="hidden">Use saved calibration</button>
+    <p id="introMsg" class="muted"></p>
+  </section>
+
+  <!-- Toolbar while tracking -->
+  <nav id="toolbar" class="hidden">
+    <div class="seg" id="modeSeg">
+      <button data-mode="dot" class="on">Circle</button>
+      <button data-mode="trail">Doodle</button>
+      <button data-mode="heat">Heat</button>
+    </div>
+    <label class="slider">Smooth <input id="smooth" type="range" min="0" max="10" value="6" /></label>
+    <button id="clearBtn">Clear</button>
+    <button id="previewBtn">Cam</button>
+    <button id="calBtn" class="primary">Calibrate</button>
+  </nav>
+
+  <p id="hint" class="hidden">Tap any spot while looking at it to fine-tune.</p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
